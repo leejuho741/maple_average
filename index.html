@@ -1,12 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Portfolio</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" />
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 </head>
 <body>
-  <p>Hello, World!</p>
+  <div class="container">
+    <table id="table1">
+      <thead>
+        <tr>
+          <th>name</th>
+          <th>graph</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Smith</td>
+          <td><canvas id="canvas1"></canvas></td>
+        </tr>
+        <tr>
+          <td>London</td>
+          <td><canvas id="canvas2"></canvas></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#table1').DataTable({
+        columnDefs: [
+            {targets: 0, className: 'dt-body-center' },
+            {targets: 1, className: 'dt-body-center' }
+          ]
+       });
+  })
+</script>
 </body>
-</html>
